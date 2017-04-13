@@ -1,0 +1,14 @@
+<div class="body"></div>
+<div class="grad"></div>
+<div class="header">
+    <div>Site<span>Random</span></div>
+</div>
+<br>
+<div class="login">
+    <form (ngSubmit)="onSubmit()" >
+        <input type="text" placeholder="username" name="user" [(ngModel)]="user.name"><br>
+        <input type="password" placeholder="password" name="password" [(ngModel)]="user.password"><br>
+        <input type="submit" value="Login">
+    </form>
+</div>
+<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
