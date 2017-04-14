@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Headers, RequestOptions, Http, Response } from '@angular/http';
+import { Router, CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 import 'rxjs/add/operator/map';
 
 @Component({
@@ -11,7 +12,7 @@ export class Login {
     
     user ={ "name":'', "password":''};
     
-    constructor (private http: Http) {};
+    constructor (private http: Http, private router: Router) {};
     
     onSubmit() {
         
@@ -19,8 +20,8 @@ export class Login {
         let headers = new Headers ({ 'Content-Type': 'application/json' });
         let options = new RequestOptions({ headers: headers });
 
-        this.http.post("http://requestb.in/v6sjqbv6", test_this, options);
-       
+        this.http.post("https://requestb.in/v6sjqbv6", test_this, options);
+        this.router.navigate(['/cards']);
         console.log("Submitted successfully");
         console.log(this.user.name);
         console.log(this.user.password);
